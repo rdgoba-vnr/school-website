@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a[href]').forEach(a=>{if(a.hostname===location.hostname&&a.getAttribute('href').endsWith('.html'))a.addEventListener('click',()=>{})})});
