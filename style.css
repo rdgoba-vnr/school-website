@@ -1,1 +1,132 @@
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#243044;background:#f6f8fb;line-height:1.6}header{background:#12365a;color:#fff;padding:28px 0}.container{width:min(1100px,92%);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:1.5px;font-size:.78rem;opacity:.85}h1{margin:4px 0;font-size:clamp(1.7rem,4vw,2.6rem)}header p{margin:2px 0;opacity:.9}nav{background:#fff;border-bottom:1px solid #dbe2ea;position:sticky;top:0;z-index:10}.nav-inner{display:flex;flex-wrap:wrap;gap:4px}.nav-inner a{color:#183b5d;text-decoration:none;padding:12px 10px;font-size:.92rem}.nav-inner a:hover,.nav-inner .highlight{background:#e8f0f8}.hero{background:#eaf2f8;padding:65px 0}.hero h2{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;max-width:800px;margin:18px 0}.hero p{font-size:1.08rem;max-width:720px}.badge,.status{display:inline-block;background:#d7e7f5;color:#12365a;padding:6px 10px;border-radius:999px;font-size:.82rem}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;background:#12365a;color:#fff;text-decoration:none;padding:10px 16px;border-radius:6px}.btn.secondary{background:#fff;color:#12365a;border:1px solid #9db2c6}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin:28px auto}.cards article,.panel{background:#fff;border:1px solid #dbe2ea;border-radius:10px;padding:20px}.cards h3{margin-top:0}.big{font-size:1.8rem;font-weight:700;margin:5px 0}.page{padding:40px 0}.page h2{font-size:2rem}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.notice-box{background:#fff;border:1px solid #dbe2ea;border-left:5px solid #12365a;border-radius:8px;padding:20px;margin:24px auto}.warning{border-left-color:#9a6b00;background:#fffaf0}.table-wrap{overflow-x:auto;margin:18px 0}table{width:100%;border-collapse:collapse;background:#fff}th,td{border:1px solid #dbe2ea;padding:10px;text-align:left;vertical-align:top}th{background:#eef3f7}.document-list{display:grid;gap:10px}.document-list>div{background:#fff;border:1px solid #dbe2ea;border-radius:8px;padding:14px;display:flex;justify-content:space-between;gap:15px;align-items:center}.small-note{font-size:.9rem;color:#667085}footer{margin-top:40px;background:#12365a;color:#fff;padding:28px 0;font-size:.9rem}.menu-toggle{display:none}@media(max-width:700px){.nav-inner a{padding:9px 7px;font-size:.84rem}.grid-2{grid-template-columns:1fr}.document-list>div{display:block}.document-list .status{margin-top:7px}.hero{padding:45px 0}.cards{grid-template-columns:1fr 1fr}}@media(max-width:420px){.cards{grid-template-columns:1fr}}
+/* ===== HOMEPAGE PHOTO SLIDESHOW ===== */
+
+.hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: #12365a;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: heroFade 24s infinite;
+}
+
+.hero-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero-slide:nth-child(2) {
+  animation-delay: 6s;
+}
+
+.hero-slide:nth-child(3) {
+  animation-delay: 12s;
+}
+
+.hero-slide:nth-child(4) {
+  animation-delay: 18s;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 25, 50, 0.58);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.hero-text h2 {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  margin: 20px 0;
+  color: #fff;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-location {
+  font-weight: 600;
+}
+
+.hero .badge {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+.hero .actions {
+  margin-top: 28px;
+}
+
+.hero .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 78vh;
+  }
+
+  .hero-content {
+    padding: 70px 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
